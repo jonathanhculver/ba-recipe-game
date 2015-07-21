@@ -1,0 +1,16 @@
+{
+  "name": "blue_apron",
+  "version": "0.0.0",
+  "description": "A menu matching game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "*",
+    "express": "^4.13.1"
+  }
+}
