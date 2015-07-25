@@ -1,15 +1,17 @@
 /*** global styles **/
 
 @import url(http://fonts.googleapis.com/css?family=Signika:700,300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Arvo);
 
 body {
 	font-family: "Signika", sans-serif;
 	font-weight: 300;
 	margin: 0;
+	color: #2F3566;
 }
 
 .emphasis {
-	font-weight: 400;
+	font-weight: 600;
 }
 
 #loading {
@@ -36,7 +38,6 @@ body {
 /**** header ***/
 
 #header {
-	color: #2F3566;
 	width: 100%;
 	border-bottom: 1px solid #53587F;
 	font-size: 30px;
@@ -75,49 +76,79 @@ body {
 
 #recipes .recipe {
 	margin-bottom: 10px;
+	position: relative;
 }
 
-.recipe img {
+.veggieLeaf {
+	position: absolute;
+	right: 15px;
+	top: 5px;
+}
+
+.recipe .recipeImg {
 	width: 100%;
+	border: 1px solid #B7B7B7;
 }
 
 
 /*** end recipes ***/
 
 
-.Ellipse_1 {
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.851);
-  box-shadow: 1px 1.732px 0px 1px rgba(0, 0, 0, 0.18);
-  position: absolute;
-  left: 249px;
-  top: 154px;
-  width: 142px;
-  height: 142px;
-  z-index: 113;
+/** cards ***/
+
+#cards {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.cards_title {
+	border: 1px solid #53587F;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #2E3765;
+	width: 100%;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 28px;
+	font-weight: 400;
+}
+
+#cardsContainer {
+	border: 1px solid #53587F;
+	border-top: 0px;
+	border-radius: 0px 0px 5px 5px;
+	width: 100%;
+	padding-top: 20px;
+}
+
+#cardsContainer .card {
+	background-color: #F2F2F2;
+	border: 1px solid #C6C6C6;
+	border-radius: 5px;
+	width: 271px;
+	margin: 0 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.description {
+	font-size: 10px;
+	font-style: italic;
+	font-family: "Arvo";
+	margin-top: 3px;
+}
+
+.title, .description {
+	margin-left: 15px;
 }
 
 
-.with_Shrimp___Cherry_Tomatoes {
-  font-size: 14px;
-  font-family: "Archer";
-  color: rgb(37, 55, 94);
-  font-style: italic;
-  line-height: 1.2;
-  position: absolute;
-  left: 952.924px;
-  top: 836.85px;
-  z-index: 150;
-}
-
-.Squid_Ink_Linguine_Pasta {
-  font-size: 18px;
-  font-family: "Signika";
-  color: rgb(37, 55, 94);
-  line-height: 1.2;
-  position: absolute;
-  left: 952.096px;
-  top: 813.09px;
-  z-index: 149;
-}
+/** end cards **/
 
