@@ -1,0 +1,123 @@
+/*** global styles **/
+
+@import url(http://fonts.googleapis.com/css?family=Signika:700,300,400,600);
+
+body {
+	font-family: "Signika", sans-serif;
+	font-weight: 300;
+	margin: 0;
+}
+
+.emphasis {
+	font-weight: 400;
+}
+
+#loading {
+  	background-color: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+}
+
+.loadContainer {
+	margin: 0 auto;
+	width: 200px;
+	margin-top: 74px;
+}
+
+.loadContainer img {
+	width: 100%;
+}
+
+/*** end global styles ***/
+
+
+/**** header ***/
+
+#header {
+	color: #2F3566;
+	width: 100%;
+	border-bottom: 1px solid #53587F;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+#logo {
+	width: 105px;
+}
+
+#logo img {
+	width: 100%;
+}
+
+#clock {
+	width: 27px;
+  	height: 27px;
+  	margin-top: 5px;
+  	margin-right: 0px;
+}
+
+#clock img {
+	width: 100%;
+}
+
+
+/**** end header **/
+
+
+/** recipes ***/
+
+#recipes {
+	margin-top: 20px;
+}
+
+#recipes .recipe {
+	margin-bottom: 10px;
+}
+
+.recipe img {
+	width: 100%;
+}
+
+
+/*** end recipes ***/
+
+
+.Ellipse_1 {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.851);
+  box-shadow: 1px 1.732px 0px 1px rgba(0, 0, 0, 0.18);
+  position: absolute;
+  left: 249px;
+  top: 154px;
+  width: 142px;
+  height: 142px;
+  z-index: 113;
+}
+
+
+.with_Shrimp___Cherry_Tomatoes {
+  font-size: 14px;
+  font-family: "Archer";
+  color: rgb(37, 55, 94);
+  font-style: italic;
+  line-height: 1.2;
+  position: absolute;
+  left: 952.924px;
+  top: 836.85px;
+  z-index: 150;
+}
+
+.Squid_Ink_Linguine_Pasta {
+  font-size: 18px;
+  font-family: "Signika";
+  color: rgb(37, 55, 94);
+  line-height: 1.2;
+  position: absolute;
+  left: 952.096px;
+  top: 813.09px;
+  z-index: 149;
+}
+
