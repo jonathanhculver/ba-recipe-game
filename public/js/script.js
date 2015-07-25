@@ -11,9 +11,11 @@ ba.game = (function(){
 		var $loading = $('#loading');
 		ba.game.recipe.init();
 		ba.game.card.init();
+		ba.game.timer.init(120);
 		ba.helper.ajax('/api/menu/', {}, function(data){
 			populateRecipes(data);
 			$loading.hide();
+			ba.game.timer.start();
 		});
 	};
 
@@ -86,12 +88,72 @@ ba.game.card = (function(){
 		$cardHtml.show();
 		$cardHtml.attr('data-recipeid', card.id);
 		$title.html(card.main_title);
-		if(card.id === 244 && card.sub_title === '') {
-			card.sub_title = 'with Aleppo pepper';
-		}
 		$description.html(card.sub_title);
 
 		cb($cardHtml);
+	};
+
+	return self;
+})();
+
+ba.game.timer = (function(){
+	var self = {},
+		$m,
+		$s,
+		seconds,
+		timerId;
+
+	self.init = function(s) {
+		setSeconds(s);
+		$m = $('#minutes');
+		$s = $('#seconds');
+	};
+
+	self.start = function() {
+		var timeObj = convert(getSeconds());
+		updateTime(timeObj.m, timeObj.s);
+        timerId = setInterval(keepTime, 1000);
+	};
+
+	var keepTime = function() {
+		var time = setSeconds(getSeconds()-1),
+			timeObj = convert(time),
+			m = timeObj.m,
+			s = timeObj.s;
+
+		updateTime(m, s);
+
+		if(m === 0 && s === 0) {
+			stop();
+		}
+	};
+
+	var updateTime = function(m, s) {
+		if(s< 10) {
+			s = '0'+s;
+		}
+		$s.html(s)
+		$m.html(m);
+	};
+
+	var setSeconds = function(s) {
+		seconds = s;
+		return s;
+	};
+
+	var getSeconds = function(s) {
+		return seconds;
+	};
+
+	var convert = function(time) {
+		m = Math.floor(time/60),
+		s = time - m * 60;
+
+		return {'m':m, 's':s};
+	};
+
+	var stop = function() {
+		clearInterval(timerId);
 	};
 
 	return self;
