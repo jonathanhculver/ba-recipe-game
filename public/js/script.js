@@ -46,6 +46,10 @@ ba.game = (function(){
 		$('.droppable').droppable();
 	};
 
+	self.endGame = function() {
+		alert('game over');
+	};
+
 	return self;
 })();
 
@@ -122,6 +126,11 @@ ba.game.timer = (function(){
         timerId = setInterval(keepTime, 1000);
 	};
 
+	self.end = function() {
+		updateTime(0,0);
+		clearInterval(timerId);
+	};
+
 	var keepTime = function() {
 		var time = setSeconds(getSeconds()-1),
 			timeObj = convert(time),
@@ -160,6 +169,7 @@ ba.game.timer = (function(){
 	};
 
 	var stop = function() {
+		ba.game.endGame();
 		clearInterval(timerId);
 	};
 
@@ -169,7 +179,8 @@ ba.game.timer = (function(){
 ba.game.scoreboard = (function(){
 	var self = {},
 		score = 0,
-		$scoreObj;
+		$scoreObj,
+		numCorrect = 0;
 
 	self.init = function(){
 		$scoreObj = $('#points');
@@ -178,11 +189,24 @@ ba.game.scoreboard = (function(){
 	self.add = function() {
 		setScore(getScore()+10);
 		updateScoreboard();
+		incrementNumCorrect();
+		if(getNumCorrect() === 6) {
+			ba.game.timer.end();
+			ba.game.endGame();
+		}
 	};
 
 	self.subtract = function() {
 		setScore(getScore()-5);
 		updateScoreboard();
+	};
+
+	var getNumCorrect= function() {
+		return numCorrect;
+	};
+
+	var incrementNumCorrect = function() {
+		return ++numCorrect;
 	};
 
 	var getScore = function() {
@@ -193,6 +217,7 @@ ba.game.scoreboard = (function(){
 		score = s;
 		return score;
 	};
+
 
 	var updateScoreboard= function() {
 		$scoreObj.html(getScore());

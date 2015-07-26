@@ -65,6 +65,7 @@
 				ba.game.scoreboard.add();
 				card.style.left = position.left+ 25 + "px";
 				card.style.top = position.top+ 145 + "px";
+				card.style.zIndex = 1;
 				$droppedRecipe.find('.check_correct').show();
 				$droppedRecipe.find('.drop_zone').unbind('mouseover');
 			}
