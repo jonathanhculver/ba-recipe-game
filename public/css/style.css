@@ -36,6 +36,17 @@ body {
 	position: relative;
 }
 
+.button {
+	background-image: linear-gradient(#777a99, #424673, #2f3567);
+	border-color: #484769 #484769 #282a52;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
 /*** end global styles ***/
 
 
@@ -80,7 +91,7 @@ body {
 }
 
 #recipes .recipe {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	position: relative;
 }
 
@@ -96,8 +107,8 @@ body {
 }
 
 .recipe .drag_over {
-	outline: 5px solid #303766;
-	border: 0px;
+	outline: 3px solid #303766;
+	border-color: #303766;
 }
 
 .drop_zone {

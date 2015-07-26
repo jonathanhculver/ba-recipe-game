@@ -201,6 +201,11 @@ ba.game.scoreboard = (function(){
 		updateScoreboard();
 	};
 
+	self.reset = function() {
+		setScore(0);
+		updateScoreboard();
+	};
+
 	var getNumCorrect= function() {
 		return numCorrect;
 	};
