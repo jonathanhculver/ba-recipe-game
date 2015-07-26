@@ -36,12 +36,20 @@
 				}
 			});
 			$(document).on('mouseup', function(event){
-				$target = null;
+				if($target !== null) {
+					$target.style.left = offsetX+ "px";
+					$target.style.top = offsetY+ "px";
+					$target = null;	
+				}
 			});
 		};
 
 		return this.each(function(){
 			attachEvents(this);
 		});
+	};
+
+	$.fn.droppable = function() {
+
 	};
 })(jQuery)
