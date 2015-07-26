@@ -12,6 +12,7 @@ ba.game = (function(){
 		ba.game.recipe.init();
 		ba.game.card.init();
 		ba.game.timer.init(120);
+		ba.game.scoreboard.init();
 		ba.helper.ajax('/api/menu/', {}, function(data){
 			populateRecipes(data);
 			$loading.hide();
@@ -160,6 +161,41 @@ ba.game.timer = (function(){
 
 	var stop = function() {
 		clearInterval(timerId);
+	};
+
+	return self;
+})();
+
+ba.game.scoreboard = (function(){
+	var self = {},
+		score = 0,
+		$scoreObj;
+
+	self.init = function(){
+		$scoreObj = $('#points');
+	};
+
+	self.add = function() {
+		setScore(getScore()+10);
+		updateScoreboard();
+	};
+
+	self.subtract = function() {
+		setScore(getScore()-5);
+		updateScoreboard();
+	};
+
+	var getScore = function() {
+		return score;
+	};
+
+	var setScore = function(s) {
+		score = s;
+		return score;
+	};
+
+	var updateScoreboard= function() {
+		$scoreObj.html(getScore());
 	};
 
 	return self;

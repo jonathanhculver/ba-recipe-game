@@ -28,7 +28,6 @@
 				$(this).addClass('dragging');
 				$dragging = this;
 
-
 				$emptyCard.show();
 				
 				// prevents text selection
@@ -43,13 +42,37 @@
 			});
 			$(document).on('mouseup', function(event){
 				if($target !== null) {
-					$target.style.left = offsetX+ "px";
-					$target.style.top = offsetY+ "px";
+					scoreMove($target);
 					$($target).removeClass('dragging');
 					$target = null;	
 					$dragging = null;
 				}
 			});
+		};
+
+		var scoreMove = function(card) {
+			var $droppedRecipe = $('.drag_over').closest('.recipe'),
+				recipeId = $droppedRecipe.attr('data-recipeid'),
+				cardId = $(card).attr('data-recipeid'),
+				position = $droppedRecipe.position();
+
+			if(cardId != recipeId) {
+				ba.game.scoreboard.subtract();
+				card.style.left = offsetX+ "px";
+				card.style.top = offsetY+ "px";
+				$droppedRecipe.find('.check_wrong').show();
+			} else {
+				ba.game.scoreboard.add();
+				card.style.left = position.left+ 25 + "px";
+				card.style.top = position.top+ 145 + "px";
+				$droppedRecipe.find('.check_correct').show();
+				$droppedRecipe.find('.drop_zone').unbind('mouseover');
+			}
+
+			setTimeout(function(){
+				$droppedRecipe.find('.check').fadeOut();
+				$droppedRecipe.find('.recipeImg').removeClass('drag_over');
+			}, 1000);
 		};
 
 		return this.each(function(){
@@ -77,5 +100,5 @@
 			attachEvents($(this).find('.drop_zone'), $(this).find('.recipeImg'));
 		});
 	};
-	
+
 })(jQuery)
