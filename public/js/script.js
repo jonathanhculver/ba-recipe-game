@@ -42,6 +42,7 @@ ba.game = (function(){
 		$recipesContainer.show();
 		$cardsContainer.closest('#cards').show();
 		$('.draggable').draggable();
+		$('.droppable').droppable();
 	};
 
 	return self;
@@ -67,6 +68,7 @@ ba.game.recipe = (function(){
 		if(recipe.vegetarian) {
 			$veggieleaf.show();
 		}
+		$recipeHtml.addClass('droppable');
 		cb($recipeHtml);
 	};
 

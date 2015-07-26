@@ -1,5 +1,8 @@
 /* custom jQuery plugin for drag and drop */
 (function($) {
+	
+	var $dragging = null;
+	
 	$.fn.draggable = function() {
 		var startX,
 			startY,
@@ -22,6 +25,9 @@
 				this.style.top = offsetY+"px";
 				this.style.left = offsetX+"px";
 				this.style.zIndex = 1000;
+				$(this).addClass('dragging');
+				$dragging = this;
+
 
 				$emptyCard.show();
 				
@@ -39,7 +45,9 @@
 				if($target !== null) {
 					$target.style.left = offsetX+ "px";
 					$target.style.top = offsetY+ "px";
+					$($target).removeClass('dragging');
 					$target = null;	
+					$dragging = null;
 				}
 			});
 		};
@@ -51,5 +59,23 @@
 
 	$.fn.droppable = function() {
 
+		var attachEvents = function(obj, image) {
+			$(obj).on('mouseover', function(event){
+				if($dragging !== null) {
+					$(image).addClass('drag_over');
+				}
+			});
+
+			$(obj).on('mouseout', function(event) {
+				if($dragging !== null) {
+					$(image).removeClass('drag_over');
+				}
+			});
+		};
+
+		return this.each(function(){
+			attachEvents($(this).find('.drop_zone'), $(this).find('.recipeImg'));
+		});
 	};
+	
 })(jQuery)

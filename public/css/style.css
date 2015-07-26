@@ -95,6 +95,21 @@ body {
 	border: 1px solid #B7B7B7;
 }
 
+.recipe .drag_over {
+	outline: 5px solid #303766;
+	border: 0px;
+}
+
+.drop_zone {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 10001;
+	background-color: #fff;
+	left: 0px;
+	opacity: 0;
+}
+
 
 /*** end recipes ***/
 
