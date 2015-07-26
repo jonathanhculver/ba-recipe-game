@@ -5,19 +5,23 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="http://res.cloudinary.com/hn5egfnw4/raw/upload/v1409692063/grid.css" />
 		<script type="text/javascript" src="/js/script.js"></script>
+		<script type="text/javascript" src="/js/dragdrop.js"></script>
+		<link rel="shortcut icon" href="https://www.blueapron.com/favicon.ico" />
+		<title>Recipe Game</title>
 	</head>
 
 	<body>
 		<div id="header">
 			<% include partials/header.ejs %>
 		</div>
-		<div id="recipes">
-			<% include partials/recipes.ejs %>
-		</div>	
-		<div id="cards" style="display:none">
-			<% include partials/cards.ejs %>
+		<div id="container">
+			<div id="recipes">
+				<% include partials/recipes.ejs %>
+			</div>	
+			<div id="cards" style="display:none">
+				<% include partials/cards.ejs %>
+			</div>
 		</div>
-
 		<div id="loading">
 			<div class="loadContainer">
 				<img src="http://media.blueapron.com/assets/loader/pot-loader-a096014ae159099e67d206a5aa4a49f3.gif" />

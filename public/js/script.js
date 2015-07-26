@@ -38,8 +38,10 @@ ba.game = (function(){
 				$cardsContainer.append($cardHtml);	
 			});
 		}
+		//show containers and attach events
 		$recipesContainer.show();
 		$cardsContainer.closest('#cards').show();
+		$('.draggable').draggable();
 	};
 
 	return self;
@@ -76,17 +78,19 @@ ba.game.card = (function(){
 		template;
 
 	self.init = function() {
-		 template = $('#cardsContainer .card')[0];$
+		 template = $('#cardsContainer .card_container')[0];$
 	};
 
 	self.buildCard = function(card, cb) {
 		card = card.recipe;
 		var $cardHtml = $(template).clone(),
-			$title = $cardHtml.find('.title'),
-			$description = $cardHtml.find('.description');
+			$card = $cardHtml.find('.card'),
+			$title = $card.find('.title'),
+			$description = $card.find('.description');
 
-		$cardHtml.show();
-		$cardHtml.attr('data-recipeid', card.id);
+		$card.show();
+		$card.attr('data-recipeid', card.id);
+		$card.addClass('draggable');
 		$title.html(card.main_title);
 		$description.html(card.sub_title);
 

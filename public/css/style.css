@@ -25,11 +25,15 @@ body {
 .loadContainer {
 	margin: 0 auto;
 	width: 200px;
-	margin-top: 74px;
+	margin-top: 80px;
 }
 
 .loadContainer img {
 	width: 100%;
+}
+
+#container {
+	position: relative;
 }
 
 /*** end global styles ***/
@@ -40,13 +44,14 @@ body {
 #header {
 	width: 100%;
 	border-bottom: 1px solid #53587F;
-	font-size: 30px;
+	font-size: 28px;
 	padding-top: 10px;
 	padding-bottom: 5px;
 }
 
 #logo {
 	width: 105px;
+	margin-top: 5px;
 }
 
 #logo img {
@@ -57,7 +62,7 @@ body {
 	width: 27px;
   	height: 27px;
   	margin-top: 5px;
-  	margin-right: 0px;
+  	margin-right: 5px;
 }
 
 #clock img {
@@ -120,6 +125,7 @@ body {
 	border-radius: 0px 0px 5px 5px;
 	width: 100%;
 	padding-top: 20px;
+	height: 171px;
 }
 
 #cardsContainer .card {
@@ -127,12 +133,25 @@ body {
 	border: 1px solid #C6C6C6;
 	border-radius: 5px;
 	width: 271px;
-	margin: 0 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	margin-bottom: 20px;
-	cursor: pointer;
 	height: 34px;
+}
+
+#cardsContainer .card_container {
+	width: 271px;
+	margin: 0 20px;
+}
+
+#cardsContainer .card_empty {
+	width: 100%;
+	border: 1px dotted #737373;
+	height: 34px;
+	border-radius: 5px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .title {
@@ -151,6 +170,10 @@ body {
 	margin-left: 15px;
 }
 
+.draggable {
+	position: relative;
+	cursor: move;
+}
 
 /** end cards **/
 
