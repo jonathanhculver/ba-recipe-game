@@ -45,6 +45,14 @@ body {
 	color: white;
 	text-align: center;
 	text-decoration: none;
+	padding: 3px 10px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.button:hover {
+	background-image: none;
+	background-color: #313567;
 }
 
 /*** end global styles ***/
@@ -226,4 +234,46 @@ body {
 }
 
 /** end cards **/
+
+
+/** game over popup **/
+#gameOver {
+	background: url("http://media.blueapron.com/assets/fancybox/fancybox_overlay-978b02de43eae0923e933d982d32dc6d.png") repeat scroll 0 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 10002;
+}
+
+.gameover_popup {
+  	background-color: rgba(255, 255, 255, 1);
+	margin: 0 auto;
+	width: 480px;
+	height: 150px;
+	margin-top: 100px;
+	z-index: 10002;
+	border-radius: 5px;
+}
+
+#gameOver .title {
+	width: 100%;
+	text-align: center;
+	font-size: 38px;
+	margin-top: 20px;
+	margin-left: 0;
+}
+
+#gameOver .button {
+	margin-right: 10px;
+}
+
+#gameOver .button_container {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+/** end game over popup **/
 

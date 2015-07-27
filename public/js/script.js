@@ -11,8 +11,9 @@ ba.game = (function(){
 		var $loading = $('#loading');
 		ba.game.recipe.init();
 		ba.game.card.init();
-		ba.game.timer.init(120);
+		ba.game.timer.init(10);
 		ba.game.scoreboard.init();
+		ba.game.popup.init();
 		ba.helper.ajax('/api/menu/', {}, function(data){
 			populateRecipes(data);
 			$loading.hide();
@@ -47,7 +48,7 @@ ba.game = (function(){
 	};
 
 	self.endGame = function() {
-		alert('game over');
+		ba.game.popup.show();
 	};
 
 	return self;
@@ -112,10 +113,12 @@ ba.game.timer = (function(){
 		$m,
 		$s,
 		seconds,
+		totalTime,
 		timerId;
 
 	self.init = function(s) {
 		setSeconds(s);
+		totalTime = s;
 		$m = $('#minutes');
 		$s = $('#seconds');
 	};
@@ -171,6 +174,7 @@ ba.game.timer = (function(){
 	var stop = function() {
 		ba.game.endGame();
 		clearInterval(timerId);
+		setSeconds(totalTime);
 	};
 
 	return self;
@@ -186,7 +190,7 @@ ba.game.scoreboard = (function(){
 		$scoreObj = $('#points');
 	};
 
-	self.add = function() {
+	var add = function() {
 		setScore(getScore()+10);
 		updateScoreboard();
 		incrementNumCorrect();
@@ -196,7 +200,7 @@ ba.game.scoreboard = (function(){
 		}
 	};
 
-	self.subtract = function() {
+	var subtract = function() {
 		setScore(getScore()-5);
 		updateScoreboard();
 	};
@@ -204,6 +208,33 @@ ba.game.scoreboard = (function(){
 	self.reset = function() {
 		setScore(0);
 		updateScoreboard();
+		resetNumCorrect();
+	};
+
+	self.scoreMove = function(card, offsetX, offsetY) {
+		var $droppedRecipe = $('.drag_over').closest('.recipe'),
+			recipeId = $droppedRecipe.attr('data-recipeid'),
+			cardId = $(card).attr('data-recipeid'),
+			position = $droppedRecipe.position();
+
+		if(cardId != recipeId) {
+			subtract();
+			card.style.left = offsetX+ "px";
+			card.style.top = offsetY+ "px";
+			$droppedRecipe.find('.check_wrong').show();
+		} else {
+			add();
+			card.style.left = position.left+ 25 + "px";
+			card.style.top = position.top+ 145 + "px";
+			card.style.zIndex = 1;
+			$droppedRecipe.find('.check_correct').show();
+			$droppedRecipe.find('.drop_zone').unbind('mouseover');
+		}
+
+		setTimeout(function(){
+			$droppedRecipe.find('.check').fadeOut();
+			$droppedRecipe.find('.recipeImg').removeClass('drag_over');
+		}, 1000);
 	};
 
 	var getNumCorrect= function() {
@@ -223,9 +254,37 @@ ba.game.scoreboard = (function(){
 		return score;
 	};
 
+	var resetNumCorrect = function() {
+		numCorrect = 0;
+	};
 
 	var updateScoreboard= function() {
 		$scoreObj.html(getScore());
+	};
+
+	return self;
+})();
+
+ba.game.popup = (function(){
+	var self = {};
+
+	self.init = function() {
+		attachEvents();
+	};
+
+	self.show = function() {
+		$('#gameOver').show();
+	};
+
+	var attachEvents = function(){
+		$('#exit').on('click', function(){
+			$('#gameOver').hide();
+		});
+		$('#play').on('click', function(){
+			$('#gameOver').hide();
+			ba.game.scoreboard.reset();
+			ba.game.timer.start();
+		});
 	};
 
 	return self;
