@@ -43,11 +43,12 @@ ba.game = (function(){
 		//show containers and attach events
 		$recipesContainer.show();
 		$cardsContainer.closest('#cards').show();
-		$('.draggable').draggable();
-		$('.droppable').droppable();
+		$('.draggable').draggable('init');
+		$('.droppable').droppable('init');
 	};
 
 	self.endGame = function() {
+		$('.droppable').droppable('reset');
 		ba.game.popup.show();
 	};
 
@@ -279,11 +280,15 @@ ba.game.popup = (function(){
 	var attachEvents = function(){
 		$('#exit').on('click', function(){
 			$('#gameOver').hide();
+			$('.draggable').draggable('reset');
 		});
 		$('#play').on('click', function(){
 			$('#gameOver').hide();
 			ba.game.scoreboard.reset();
 			ba.game.timer.start();
+			$('.draggable').draggable('reset');
+			$('.droppable').droppable('init');
+			$('.draggable').draggable('init');
 		});
 	};
 

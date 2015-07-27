@@ -3,7 +3,7 @@
 	
 	var $dragging = null;
 	
-	$.fn.draggable = function() {
+	$.fn.draggable = function(action) {
 		var startX,
 			startY,
 			offset,
@@ -41,6 +41,7 @@
 				}
 			});
 			$(document).on('mouseup', function(event){
+				// we drop it
 				if($target !== null) {
 					ba.game.scoreboard.scoreMove($target, offsetX, offsetY);
 					$($target).removeClass('dragging');
@@ -50,12 +51,26 @@
 			});
 		};
 
+		var reset = function(obj) {
+			var $emptyCard = $(obj).closest('.card_container').find('.card_empty');
+			$emptyCard.hide();
+			obj.style.position = '';
+			obj.style.top = "";
+			obj.style.left = "";
+			$(obj).unbind();
+			$(document).unbind();
+		};
+
 		return this.each(function(){
-			attachEvents(this);
+			if(action === 'init') {
+				attachEvents(this);
+			}else if(action === 'reset') {
+				reset(this);
+			}
 		});
 	};
 
-	$.fn.droppable = function() {
+	$.fn.droppable = function(action) {
 
 		var attachEvents = function(obj, image) {
 			$(obj).on('mouseover', function(event){
@@ -72,7 +87,11 @@
 		};
 
 		return this.each(function(){
-			attachEvents($(this).find('.drop_zone'), $(this).find('.recipeImg'));
+			if(action === 'init') {
+				attachEvents($(this).find('.drop_zone'), $(this).find('.recipeImg'));
+			} else if(action === 'reset') {
+				$(this).find('.drop_zone').unbind();
+			}
 		});
 	};
 
