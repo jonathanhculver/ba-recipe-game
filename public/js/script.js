@@ -133,6 +133,7 @@ ba.game.timer = (function(){
 	self.end = function() {
 		updateTime(0,0);
 		clearInterval(timerId);
+		setSeconds(totalTime);
 	};
 
 	var keepTime = function() {
