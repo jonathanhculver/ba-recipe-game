@@ -11,7 +11,7 @@ ba.game = (function(){
 		var $loading = $('#loading');
 		ba.game.recipe.init();
 		ba.game.card.init();
-		ba.game.timer.init(10);
+		ba.game.timer.init(120);
 		ba.game.scoreboard.init();
 		ba.game.popup.init();
 		ba.helper.ajax('/api/menu/', {}, function(data){
