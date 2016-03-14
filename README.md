@@ -2,6 +2,13 @@
 
 [Live Demo](http://ba-recipe-game.herokuapp.com)
 
+### Set Up
+
+- `git clone https://github.com/jonathanhculver/ba-recipe-game.git`
+- `cd ba-recipe-game`
+- `npm install`
+- `npm start`
+
 ### Description
 
 Users have two minutes to match a recipe card with a recipe image. You can earn 10 points for a correct match and lose 5 points for an incorrect match.
