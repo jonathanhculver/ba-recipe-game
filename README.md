@@ -18,7 +18,7 @@ The drag and drop functionality was written as a custom jQuery plugin. The idea 
 
 The biggest challenge I faced was getting a droppable div to detect a mouseover while another item was being dragged. To solve this challenge, I created a transparent ```.drop_zone``` class with a higher z-index than the card being dragged. I then positioned the drop_zone div on top of the droppable recipe so it could detect the mouseover and mouseout events. 
 
-```
+```css
 .drop_zone {
 	width: 100%;
 	height: 100%;
@@ -30,7 +30,7 @@ The biggest challenge I faced was getting a droppable div to detect a mouseover 
 }
 ```
 
-```
+```html
 	<div class="drop_zone"></div>
 ```
 
