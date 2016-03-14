@@ -4,57 +4,57 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo);
 
 body {
-	font-family: "Signika", sans-serif;
-	font-weight: 300;
-	margin: 0;
-	color: #2F3566;
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  color: #2F3566;
 }
 
 .emphasis {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 #loading {
-  	background-color: rgba(255, 255, 255, 0.6);
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .loadContainer {
-	margin: 0 auto;
-	width: 200px;
-	margin-top: 80px;
+  margin: 0 auto;
+  width: 200px;
+  margin-top: 80px;
 }
 
 .loadContainer img {
-	width: 100%;
+  width: 100%;
 }
 
 #container {
-	position: relative;
-	margin: 0 auto;
-	width: 960px;
+  position: relative;
+  margin: 0 auto;
+  width: 960px;
 }
 
 .button {
-	background-image: linear-gradient(#777a99, #424673, #2f3567);
-	border-color: #484769 #484769 #282a52;
-	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	padding: 3px 10px;
-	cursor: pointer;
-	font-size: 16px;
+  background-image: linear-gradient(#777a99, #424673, #2f3567);
+  border-color: #484769 #484769 #282a52;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .button:hover {
-	background-image: none;
-	background-color: #313567;
+  background-image: none;
+  background-color: #313567;
 }
 
 /*** end global styles ***/
@@ -63,31 +63,31 @@ body {
 /**** header ***/
 
 #header {
-	width: 100%;
-	border-bottom: 1px solid #53587F;
-	font-size: 28px;
-	padding-top: 10px;
-	padding-bottom: 5px;
+  width: 100%;
+  border-bottom: 1px solid #53587F;
+  font-size: 28px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 #logo {
-	width: 105px;
-	margin-top: 5px;
+  width: 105px;
+  margin-top: 5px;
 }
 
 #logo img {
-	width: 100%;
+  width: 100%;
 }
 
 #clock {
-	width: 27px;
-  	height: 27px;
-  	margin-top: 5px;
-  	margin-right: 5px;
+  width: 27px;
+    height: 27px;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 #clock img {
-	width: 100%;
+  width: 100%;
 }
 
 
@@ -97,63 +97,63 @@ body {
 /** recipes ***/
 
 #recipes {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #recipes .recipe {
-	margin-bottom: 15px;
-	position: relative;
+  margin-bottom: 15px;
+  position: relative;
 }
 
 .veggieLeaf {
-	position: absolute;
-	right: 15px;
-	top: 5px;
+  position: absolute;
+  right: 15px;
+  top: 5px;
 }
 
 .recipe .recipeImg {
-	width: 100%;
-	border: 1px solid #B7B7B7;
+  width: 100%;
+  border: 1px solid #B7B7B7;
 }
 
 .recipe .drag_over {
-	outline: 3px solid #303766;
-	border-color: #303766;
+  outline: 3px solid #303766;
+  border-color: #303766;
 }
 
 .drop_zone {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 10001;
-	background-color: #fff;
-	left: 0px;
-	opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10001;
+  background-color: #fff;
+  left: 0px;
+  opacity: 0;
 }
 
 .check {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .check_background {
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.8);
-	box-shadow: 1px 1.732px 0px 1px rgba(0, 0, 0, 0.18);
-	width: 132px;
-	height: 132px;
-	margin-left: 87px;
-	margin-top: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1.732px 0px 1px rgba(0, 0, 0, 0.18);
+  width: 132px;
+  height: 132px;
+  margin-left: 87px;
+  margin-top: 7px;
 }
 
 .check_img {
-	margin-top: 35px;
-	margin-left: 26px;
+  margin-top: 35px;
+  margin-left: 26px;
 }
 
 .check_wrong .check_img {
-	margin-left: 35px;
+  margin-left: 35px;
 }
 
 /*** end recipes ***/
@@ -162,76 +162,76 @@ body {
 /** cards ***/
 
 #cards {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .cards_title {
-	border: 1px solid #53587F;
-	border-radius: 5px 5px 0px 0px;
-	background-color: #2E3765;
-	width: 100%;
-	color: white;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 28px;
-	font-weight: 400;
+  border: 1px solid #53587F;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #2E3765;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 28px;
+  font-weight: 400;
 }
 
 #cardsContainer {
-	border: 1px solid #53587F;
-	border-top: 0px;
-	border-radius: 0px 0px 5px 5px;
-	width: 100%;
-	padding-top: 20px;
-	height: 171px;
+  border: 1px solid #53587F;
+  border-top: 0px;
+  border-radius: 0px 0px 5px 5px;
+  width: 100%;
+  padding-top: 20px;
+  height: 171px;
 }
 
 #cardsContainer .card {
-	background-color: #F2F2F2;
-	border: 1px solid #C6C6C6;
-	border-radius: 5px;
-	width: 271px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-bottom: 20px;
-	height: 34px;
+  background-color: #F2F2F2;
+  border: 1px solid #C6C6C6;
+  border-radius: 5px;
+  width: 271px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  height: 34px;
 }
 
 #cardsContainer .card_container {
-	width: 271px;
-	margin: 0 20px;
+  width: 271px;
+  margin: 0 20px;
 }
 
 #cardsContainer .card_empty {
-	width: 100%;
-	border: 1px dotted #737373;
-	height: 34px;
-	border-radius: 5px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-bottom: 20px;
+  width: 100%;
+  border: 1px dotted #737373;
+  height: 34px;
+  border-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .title {
-	font-weight: 600;
-	font-size: 16px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .description {
-	font-size: 10px;
-	font-style: italic;
-	font-family: "Arvo";
-	margin-top: 3px;
+  font-size: 10px;
+  font-style: italic;
+  font-family: "Arvo";
+  margin-top: 3px;
 }
 
 .title, .description {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .draggable {
-	position: relative;
-	cursor: move;
+  position: relative;
+  cursor: move;
 }
 
 /** end cards **/
@@ -239,41 +239,41 @@ body {
 
 /** game over popup **/
 #gameOver {
-	background: url("http://media.blueapron.com/assets/fancybox/fancybox_overlay-978b02de43eae0923e933d982d32dc6d.png") repeat scroll 0 0;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 10002;
+  background: url("http://media.blueapron.com/assets/fancybox/fancybox_overlay-978b02de43eae0923e933d982d32dc6d.png") repeat scroll 0 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10002;
 }
 
 .gameover_popup {
-  	background-color: rgba(255, 255, 255, 1);
-	margin: 0 auto;
-	width: 480px;
-	height: 150px;
-	margin-top: 100px;
-	z-index: 10002;
-	border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  width: 480px;
+  height: 150px;
+  margin-top: 100px;
+  z-index: 10002;
+  border-radius: 5px;
 }
 
 #gameOver .title {
-	width: 100%;
-	text-align: center;
-	font-size: 38px;
-	margin-top: 20px;
-	margin-left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 38px;
+  margin-top: 20px;
+  margin-left: 0;
 }
 
 #gameOver .button {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 #gameOver .button_container {
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	margin-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /** end game over popup **/
