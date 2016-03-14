@@ -16,8 +16,8 @@ app.get('/api/menu/', function(req, res){
 		if(!error && response.statusCode === 200) {
 			var json = JSON.parse(body);
 			res.send(json.two_person_plan.recipes);
-		}else {
-			res.send({"error": error, "status": response.statusCode})
+		} else {
+			res.send({"error": error, "status": response.statusCode});
 		}
 	});
 });
